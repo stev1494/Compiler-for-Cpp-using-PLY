@@ -51,7 +51,8 @@ tokens = [
    'DEREF_TWO',
    'QUES_MARK',
    'COMMA',
-   'HASH'
+   'HASH',
+    'DOLAR'
 ] 
 
 tokens += [kwd.upper() for kwd in reserved]
@@ -108,6 +109,7 @@ t_DEREF_TWO =r'–>'
 t_QUES_MARK = r'\?' 
 t_COMMA = r','  
 t_CHAR_CONST = r"\'.\'"
+t_DOLAR='@'
 
 def t_COMMENT(t):
     r"(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)|(//.*)"
@@ -138,7 +140,7 @@ def t_newline(t):
 
 
 def t_ID(t):
-    r'$[a-zA-Z_][a-zA-Z_0-9]*'
+    r'[a-zA-Z_][a-zA-Z_0-9]*'
     if t.value in reserved or t.value in predef_func or t.value in extra_words:
         t.type = t.value.upper()    # Check for reserved words
     if t.type == 'ID':

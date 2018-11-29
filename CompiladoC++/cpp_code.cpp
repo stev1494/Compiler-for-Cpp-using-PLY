@@ -1,6 +1,6 @@
 int main()
 {
-    int nro;
+    @int @nro;
 
     printf( "\n   " );
 

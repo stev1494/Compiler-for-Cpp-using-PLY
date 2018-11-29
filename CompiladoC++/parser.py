@@ -40,7 +40,7 @@ warnings.filterwarnings("ignore")
 
 #main function
 def p_mainFunc(p):
-	'''mainFunc : INT MAIN LPAREN RPAREN statement'''
+	'''mainFunc : INT DOLAR MAIN LPAREN RPAREN statement'''
 
 	p[0] = p[5]
 
@@ -753,7 +753,7 @@ def p_error(p):
 
 #Test
 parser=yacc.yacc()
-s=open('cpp_code2.cpp','r').read()
+s=open('c.cpp','r').read()
 print (yacc.parse(s))
 #s=open('cpp_code.cpp','r').read()
 result = parser.parse(s)
