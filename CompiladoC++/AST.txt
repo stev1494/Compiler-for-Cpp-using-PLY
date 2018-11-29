@@ -1,0 +1,240 @@
+
+[CompoundStmt] : 
+DeclList : 
+[DecList] : 
+
+Declarations : [
+[Declaration] : 
+type : 
+[Type] : 
+type : int
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : number,	idtype : int
+ 
+[Identifier] : 
+id : i,	idtype : int,	value :
+[Expr] : 
+expr_type : constant	operand1 : 1
+ 
+[Identifier] : 
+id : factorial,	idtype : int,	value :
+[Expr] : 
+expr_type : constant	operand1 : 1
+ ]
+ 
+[Declaration] : 
+type : 
+[Type] : 
+type : int
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : m,	idtype : int
+ ]
+ 
+[Declaration] : 
+type : 
+[Type] : 
+type : const int
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : a,	idtype : const int
+ 
+[Identifier] : 
+id : b,	idtype : const int
+ ]
+ 
+[Declaration] : 
+type : 
+[Type] : 
+type : int
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : d,	idtype : int
+ ]
+ 
+[Declaration] : 
+type : 
+[Type] : 
+type : char
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : c,	idtype : char**
+ 
+[Identifier] : 
+id : x,	idtype : char
+ ]
+ 
+[Declaration] : 
+type : 
+[Type] : 
+type : int
+
+identlist : 
+[IdentList] : 
+identifiers : [
+[Identifier] : 
+id : p,	idtype : int[2][4][3]
+ ]
+ ]
+
+stmtlist : 
+[StmtList] : 
+
+stmts : [
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : d,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : binop	operator : +	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : a,	idtype : const int
+	operand2 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : b,	idtype : const int
+ 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : m,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 5 
+[IfStmt] : 
+conditionexpr : 
+[Expr] : 
+expr_type : binop	operator : ==	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : m,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 10
+thenstmt : 
+[CompoundStmt] : 
+
+stmtlist : 
+[StmtList] : 
+
+stmts : [
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : b,	idtype : const int
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 10 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : a,	idtype : const int
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 5 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : d,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : binop	operator : +	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : a,	idtype : const int
+	operand2 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : b,	idtype : const int
+ 
+[IfStmt] : 
+conditionexpr : 
+[Expr] : 
+expr_type : binop	operator : ==	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : i,	idtype : int,	value :
+[Expr] : 
+expr_type : constant	operand1 : 1
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 5
+thenstmt : 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : number,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 20 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : i,	idtype : int,	value :
+[Expr] : 
+expr_type : constant	operand1 : 1
+	operand2 : 
+[Expr] : 
+expr_type : constant	operand1 : 100 ]
+ 
+[Expr] : 
+expr_type : binop	operator : =	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : m,	idtype : int
+	operand2 : 
+[Expr] : 
+expr_type : binop	operator : +	operand1 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : a,	idtype : const int
+	operand2 : 
+[Expr] : 
+expr_type : id	operand1 : 
+[Identifier] : 
+id : b,	idtype : const int
+ 
+[RetStmt] : 
+expr : 
+[Expr] : 
+expr_type : constant	operand1 : 0 ]
