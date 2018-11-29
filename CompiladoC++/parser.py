@@ -40,14 +40,19 @@ warnings.filterwarnings("ignore")
 
 #main function
 def p_mainFunc(p):
-	'''mainFunc : INT MAIN LPAREN RPAREN statement '''	
+	'''mainFunc : INT MAIN LPAREN RPAREN statement'''
+
 	p[0] = p[5]
+
+
 
 def p_expression(p):
 	'''expression : assignmentExpression
                		| expression COMMA assignmentExpression'''
 	if(len(p)==2):
 		p[0]=p[1]
+
+
 
 def p_assignmentExpression(p):
 	'''assignmentExpression : conditionalExpression
@@ -737,65 +742,21 @@ def p_jumpStatement(p):
 		else:
 			p[0] = AST.RetStmt()
 
-# Error rule for syntax errorscl
+# Regla de error
 def p_error(p):
 	if p is not None:
-		print("Syntax error in input\n error: near",p.value,"at line:",p.lineno)
+		print("Error de sintaxis\n error:",p,"en linea:",p.lineno)
 		sys.exit()	
 
 # 	Build the parser
 #parser = yacc.yacc()
 
 #Test
-yacc.yacc()
-
+parser=yacc.yacc()
 s=open('cpp_code2.cpp','r').read()
 print (yacc.parse(s))
 #s=open('cpp_code.cpp','r').read()
-#result = parser.parse(s)
-#if result is not None:
-#	with open("AST.txt",'w') as f:
-#		f.write(str(result))
-
-
-
-
-
-'''
-threeAC.ThreeAddressCode()
-
-print("_______________________")
-print()
-threeAC.printTriples()
-
-print()			
-print("_______________________")
-print()	
-print("OPTIMIZED CODE")
-print("_______________________")
-print()
-
-print()
-print("AFTER CONSTANT AND COPY PROPAGATION")
-print()
-
-threeAC.const_prop()
-
-
-print()
-print("AFTER CONSTANT FOLDING")
-print()
-
-threeAC.const_fold()
-
-print()
-print("AFTER DEAD CODE ELIMINATION")
-print()
-
-threeAC.dead_code()
-
-#main_table.print_table()
-
-'''
-
-
+result = parser.parse(s)
+if result is not None:
+	with open("AST.txt",'w') as f:
+		f.write(str(result))

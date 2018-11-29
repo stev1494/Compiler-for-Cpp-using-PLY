@@ -1,10 +1,10 @@
-#include <iostream>
+//#include <iostream>
 
 // Comentario estilo C99 
 
-using namespace std;
+//using namespace std;
 int main(){
-string r,a="hola";
+int r,a="hola";
 	cout<<"hola!! :D"<<endl;
 	cin>>r;
 	if(r==a){

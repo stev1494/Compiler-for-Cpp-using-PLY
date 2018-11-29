@@ -7,10 +7,7 @@ from parser import *
 import tkinter as tk
 from tkinter import ttk
 from tkinter import ttk, font
-
 import difflib
-
-
 import ply.yacc as yacc
 
 
@@ -42,6 +39,7 @@ def analisisLexico():
     lex.lex()
     my_inp=selecciona()
 
+
     lex.input(my_inp)
     # list=[]
     variable = ''
@@ -53,19 +51,33 @@ def analisisLexico():
         variable = variable + '\n' + str(tok)
 
         if not tok:
+            #print(tok.value)
             break
-        # print(tok)
+        #print(tok)
     print(variable)
     return variable
 
 
 def analisisSintactico():
     parser = yacc.yacc()
-    s = open('cpp_code2.cpp', 'r').read()
-    result = parser.parse(s)
+
+    while True:
+        try:
+            s = selecciona()
+        except EOFError:
+            break
+        if not s: continue
+        result = parser.parse(s)
+        print(result)
+    '''
+    yacc.yacc()
+    s = selecciona()
+    result = yacc.parse(s)
     if result is not None:
         with open("AST.txt", 'w') as f:
             f.write(str(result))
+    '''
+
 
 def probabilidad(var1,var2):
     proba=difflib.SequenceMatcher(None, var1, var2).ratio()
@@ -81,17 +93,16 @@ def plagio(num):
 
 def mostrarplagio(num):
 
-    porcentaje=round(num*100,2)
-    jaja=50
-    label_plagio = Label(ventana, text=jaja)
-    label_plagio.grid(column=1,row=8)
+    porcentaje=num
+    label_plagio = Label(ventana, text=porcentaje)
+    label_plagio.grid(column=1,row=9)
 
 
 def lexico():
     variable1=analisisLexico()
     variable2=analisisLexico()
     plagio(probabilidad(variable1,variable2))
-    mostrarplagio(plagio)
+    #mostrarplagio(plagio)
 
 
 
@@ -116,12 +127,5 @@ btn_sintax.grid(column=1,row=5, padx=2, pady=2)
 ##Presentacion de la ventana
 ventana.mainloop()
 
-if __name__ == '__main__':
-    variable1=analisisLexico()
 
-    variable2=analisisLexico()
 
-    print("\n\n\n\n\nPORCENTAJE DE PLAGIO")
-
-    plagio=probabilidad(variable1,variable2)
-    print(str(round(plagio*100,2))+"%")

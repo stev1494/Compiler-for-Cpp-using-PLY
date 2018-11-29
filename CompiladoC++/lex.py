@@ -138,7 +138,7 @@ def t_newline(t):
 
 
 def t_ID(t):
-    r'[a-zA-Z_][a-zA-Z_0-9]*'
+    r'$[a-zA-Z_][a-zA-Z_0-9]*'
     if t.value in reserved or t.value in predef_func or t.value in extra_words:
         t.type = t.value.upper()    # Check for reserved words
     if t.type == 'ID':
@@ -152,7 +152,7 @@ t_ignore  = ' \t' + r'$'
 
 # Error handling rule
 def t_error(t):
-    print("Illegal character ",t.value[0])
+    print("Caracter Illegal ",t.value[0])
     t.lexer.skip(1)
 
 
